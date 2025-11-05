@@ -30,6 +30,7 @@
             background-color: var(--light);
             color: var(--dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
         
         .container {
@@ -102,6 +103,12 @@
             position: fixed;
             width: 100%;
             z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            padding: 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
         
         nav {
@@ -109,12 +116,18 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled nav {
+            padding: 10px 0;
         }
         
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary);
+            z-index: 1001;
         }
 
         .company-name {
@@ -146,6 +159,7 @@
             display: none;
             cursor: pointer;
             font-size: 1.5rem;
+            z-index: 1001;
         }
         
         /* Hero Section */
@@ -214,6 +228,11 @@
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat:hover {
+            transform: translateY(-5px);
         }
         
         .stat-number {
@@ -233,6 +252,7 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
         }
         
         .profile-image img {
@@ -262,6 +282,11 @@
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
         }
         
         .skill-category h3 {
@@ -287,6 +312,12 @@
             border-radius: 30px;
             font-size: 0.9rem;
             font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-item:hover {
+            background-color: var(--primary);
+            color: white;
         }
         
         /* Experience Section */
@@ -326,6 +357,11 @@
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
         }
         
         .timeline-content:after {
@@ -389,6 +425,16 @@
             background-color: #f1f5f9;
         }
         
+        .education-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
         /* Contact Section */
         .contact {
             background-color: var(--dark);
@@ -430,6 +476,7 @@
         
         .contact-item h3 {
             margin-bottom: 10px;
+            color: white;
         }
         
         .email-link {
@@ -476,7 +523,26 @@
             transform: translateY(-3px);
         }
         
-        /* Responsive Design */
+        /* Link Styling */
+        .timeline-content a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .timeline-content a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        
+        /* Responsive Design - Enhanced */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 95%;
+            }
+        }
+        
         @media (max-width: 992px) {
             h1 {
                 font-size: 2.8rem;
@@ -488,6 +554,7 @@
             
             .about-content {
                 grid-template-columns: 1fr;
+                gap: 40px;
             }
             
             .about-text h2 {
@@ -498,6 +565,11 @@
                 left: 50%;
                 transform: translateX(-50%);
             }
+            
+            .hero p {
+                font-size: 1.2rem;
+                padding: 0 20px;
+            }
         }
         
         @media (max-width: 768px) {
@@ -507,24 +579,31 @@
             
             .nav-links {
                 position: fixed;
-                top: 70px;
+                top: 0;
                 left: 0;
                 width: 100%;
+                height: 100vh;
                 background-color: white;
                 flex-direction: column;
                 align-items: center;
+                justify-content: center;
                 padding: 20px 0;
                 box-shadow: 0 10px 10px rgba(0,0,0,0.1);
-                transform: translateY(-150%);
+                transform: translateX(-100%);
                 transition: transform 0.3s ease;
+                z-index: 1000;
             }
             
             .nav-links.active {
-                transform: translateY(0);
+                transform: translateX(0);
             }
             
             .nav-links li {
                 margin: 15px 0;
+            }
+            
+            .nav-links a {
+                font-size: 1.2rem;
             }
             
             .timeline:before {
@@ -548,6 +627,26 @@
                 border-left: none;
                 border-right: 10px solid white;
             }
+            
+            .hero {
+                padding: 120px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
         
         @media (max-width: 576px) {
@@ -562,10 +661,79 @@
             .hero-btns {
                 flex-direction: column;
                 align-items: center;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                text-align: center;
             }
             
             .about-stats {
                 grid-template-columns: 1fr;
+            }
+            
+            .stat {
+                padding: 15px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .timeline-content {
+                padding: 20px;
+            }
+            
+            .timeline-date {
+                font-size: 0.8rem;
+            }
+            
+            .skill-category {
+                padding: 20px;
+            }
+            
+            .contact-item {
+                padding: 20px;
+            }
+            
+            .education-content {
+                padding: 25px 20px;
+            }
+            
+            .profile-image {
+                margin-top: 20px;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .timeline-content {
+                padding: 15px;
+            }
+            
+            .timeline-item {
+                padding-left: 50px;
+            }
+            
+            .timeline:before {
+                left: 20px;
             }
         }
     </style>
@@ -628,7 +796,7 @@
                     </div>
                 </div>
                 <div class="profile-image">
-                    <img src="https://photos.app.goo.gl/zC9XySx6pq4QRCq76/300x400/0d9488/ffffff?text=Your+Photo" alt="Letlhogonolo Boikanyo">
+                    <img src="https://via.placeholder.com/600x800/0d9488/ffffff?text=Your+Photo" alt="Letlhogonolo Boikanyo">
                 </div>
             </div>
         </div>
@@ -723,7 +891,7 @@
                             <li>Optimized Windows server performance as a Cloud Computing Administrator, resulting in 15% faster application response times</li>
                             <li>Streamlined requirements elicitation, software testing, and UI/UX design processes</li>
                             <li>Successfully implemented and managed SMPP systems, increasing message delivery efficiency by 15%</li>
-                            <li>Led Development of the company website <a href="https://vibmobile.com/" target="_blank">vibmobile.com</a></li>
+                            <li>Led development of the company website: <a href="https://vibmobile.com/" target="_blank" rel="noopener">vibmobile.com</a></li>
                         </ul>
                     </div>
                 </div>
@@ -763,9 +931,9 @@
     <section class="education">
         <div class="container">
             <h2>Education</h2>
-            <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+            <div class="education-content">
                 <h3>Bachelor of Science in Computer Science and Software Engineering</h3>
-                <p style="font-size: 1.2rem; color: orange; margin-bottom: 10px;">Botswana International University of Science and Technology (BIUST)</p>
+                <p style="font-size: 1.2rem; color: var(--primary); margin-bottom: 10px;">Botswana International University of Science and Technology (BIUST)</p>
                 <p style="color: var(--secondary);">2015 – 2020</p>
             </div>
         </div>
@@ -780,19 +948,19 @@
             <div class="contact-info">
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
-                    <h3 style="color: var(--light);">Phone</h3>
+                    <h3>Phone</h3>
                     <p>+267 71 487 361</p>
                 </div>
                 
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
-                    <h3 style="color: var(--light);" >Email</h3>
-                    <p><a href="mailto:Letlhogonoloboikanyo96@gmail.com" class="email-link">Letlhogonoloboikanyo96@gmail.com</a></p>
+                    <h3>Email</h3>
+                    <p><a href="mailto:Letlhogonoloboikanyo96@gmail.com" class="email-link">letlhogonoloboikanyo96@gmail.com</a></p>
                 </div>
                 
                 <div class="contact-item">
                     <i class="fas fa-map-marker-alt"></i>
-                    <h3 style="color: var(--light);" >Location</h3>
+                    <h3>Location</h3>
                     <p>Gaborone</p>
                 </div>
             </div>
@@ -815,22 +983,53 @@
         // Mobile menu toggle
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
+        const body = document.querySelector('body');
         
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            
+            // Change icon based on state
+            if (navLinks.classList.contains('active')) {
+                menuToggle.innerHTML = '<i class="fas fa-times"></i>';
+                body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+            } else {
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                body.style.overflow = 'auto';
+            }
         });
         
         // Close mobile menu when clicking on a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                body.style.overflow = 'auto';
             });
         });
         
         // Add scroll effect to navbar
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
-            header.classList.toggle('scrolled', window.scrollY > 100);
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
     </script>
 </body>
