@@ -199,27 +199,20 @@
         }
         
         /* About Section */
+        .about {
+            text-align: center;
+        }
+        
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        
-        .about-text h2 {
-            text-align: left;
-        }
-        
-        .about-text h2:after {
-            left: 0;
-            transform: none;
+            max-width: 900px;
+            margin: 0 auto;
         }
         
         .about-stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            margin-top: 30px;
+            margin-top: 50px;
         }
         
         .stat {
@@ -245,25 +238,6 @@
         .stat-text {
             font-size: 0.9rem;
             color: var(--secondary);
-        }
-        
-        .profile-image {
-            width: 100%;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            position: relative;
-        }
-        
-        .profile-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-        
-        .profile-image:hover img {
-            transform: scale(1.03);
         }
         
         /* Skills Section */
@@ -552,20 +526,6 @@
                 font-size: 2.2rem;
             }
             
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .about-text h2 {
-                text-align: center;
-            }
-            
-            .about-text h2:after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
             .hero p {
                 font-size: 1.2rem;
                 padding: 0 20px;
@@ -702,10 +662,6 @@
                 padding: 25px 20px;
             }
             
-            .profile-image {
-                margin-top: 20px;
-            }
-            
             .hero p {
                 font-size: 1.1rem;
             }
@@ -774,29 +730,24 @@
     <section class="about" id="about">
         <div class="container">
             <div class="about-content">
-                <div class="about-text">
-                    <h2>Professional Summary</h2>
-                    <p>I am a results-driven IT Manager with a strong background in leading effective technology solutions and enhancing customer experiences. My expertise spans security, networking, computer applications, IT policies, and managing corporate infrastructure.</p>
-                    <p>I specialize in cloud-based services including Windows and Linux Cloud Server Administration, and I'm adept at establishing IT policies and procedures to align with emerging technologies.</p>
-                    <p>My focus is on managing IT budgets and ensuring IT strategies support overarching business goals across multi-national operations.</p>
-                    
-                    <div class="about-stats">
-                        <div class="stat">
-                            <div class="stat-number">4+</div>
-                            <div class="stat-text">Years Experience</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">15%</div>
-                            <div class="stat-text">Operational Efficiency Improvement</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">25%</div>
-                            <div class="stat-text">Cost Savings</div>
-                        </div>
+                <h2>Professional Summary</h2>
+                <p>I am a results-driven IT Manager with a strong background in leading effective technology solutions and enhancing customer experiences. My expertise spans security, networking, computer applications, IT policies, and managing corporate infrastructure.</p>
+                <p>I specialize in cloud-based services including Windows and Linux Cloud Server Administration, and I'm adept at establishing IT policies and procedures to align with emerging technologies.</p>
+                <p>My focus is on managing IT budgets and ensuring IT strategies support overarching business goals across multi-national operations.</p>
+                
+                <div class="about-stats">
+                    <div class="stat">
+                        <div class="stat-number">4+</div>
+                        <div class="stat-text">Years Experience</div>
                     </div>
-                </div>
-                <div class="profile-image">
-                    <img src="https://via.placeholder.com/600x800/0d9488/ffffff?text=Your+Photo" alt="Letlhogonolo Boikanyo">
+                    <div class="stat">
+                        <div class="stat-number">15%</div>
+                        <div class="stat-text">Operational Efficiency Improvement</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">25%</div>
+                        <div class="stat-text">Cost Savings</div>
+                    </div>
                 </div>
             </div>
         </div>
