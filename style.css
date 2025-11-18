@@ -865,4 +865,282 @@
 .hero-meta a:hover {
   text-decoration: underline;
 }
-  
+/* Animation Styles */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Logo animation */
+.logo {
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Button animations */
+.btn {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
+}
+
+.btn.ghost:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Card hover effects */
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Avatar animation */
+.avatar-circle {
+  transition: all 0.3s ease;
+}
+
+.avatar-circle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3);
+}
+
+/* Skill tags animation */
+.hero-card-tags span {
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.hero-card-tags span:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Company logo animations */
+.company-logo .logo-placeholder {
+  transition: all 0.3s ease;
+}
+
+.company-logo .logo-placeholder:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Skills group animations */
+.skills-group:hover {
+  transform: translateY(-5px);
+}
+
+/* Contact list animations */
+.contact-list li {
+  transition: all 0.3s ease;
+  padding: 5px 0;
+}
+
+.contact-list li:hover {
+  transform: translateX(10px);
+}
+
+/* Form input animations */
+.form-group input,
+.form-group textarea {
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.1);
+}
+
+/* Back to top animation */
+.footer-links a {
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  transform: translateY(-2px);
+}
+
+/* Highlight animation for name */
+.highlight {
+  background: linear-gradient(90deg, #007bff, #6f42c1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+/* Loading animation */
+.loading {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.loading.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Company Logo Styles */
+.company-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.company-logo {
+  flex-shrink: 0;
+}
+
+.logo-placeholder {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.logo-placeholder.small {
+  width: 40px;
+  height: 40px;
+  font-size: 14px;
+}
+
+/* Skills Header Styles */
+.skills-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+/* Skills List Icons */
+.skills-group ul li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.skills-group ul li i {
+  width: 20px;
+  text-align: center;
+}
+
+/* Experience Period Styling */
+.experience-period {
+  color: #666;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+/* Contact List Links */
+.contact-list a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-list a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.hero-meta a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero-meta a:hover {
+  text-decoration: underline;
+}
