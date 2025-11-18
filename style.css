@@ -786,4 +786,83 @@
       padding: 1.2rem 1.2rem;
     }
   }
+
+  /* Company Logo Styles */
+.company-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.company-logo {
+  flex-shrink: 0;
+}
+
+.logo-placeholder {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.logo-placeholder.small {
+  width: 40px;
+  height: 40px;
+  font-size: 14px;
+}
+
+/* Skills Header Styles */
+.skills-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+/* Skills List Icons */
+.skills-group ul li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.skills-group ul li i {
+  width: 20px;
+  text-align: center;
+}
+
+/* Experience Period Styling */
+.experience-period {
+  color: #666;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+/* Contact List Links */
+.contact-list a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-list a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.hero-meta a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero-meta a:hover {
+  text-decoration: underline;
+}
   
